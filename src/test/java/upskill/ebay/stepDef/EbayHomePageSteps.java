@@ -17,4 +17,14 @@ public class EbayHomePageSteps {
 	public void search_for_shoes() throws Throwable {
 		EbayHomePageActionsObj.searchShoes();
 	}
+	
+	@When("^Search for Pants$")
+	public void search_for_Pants() throws Throwable {
+		EbayHomePageActionsObj.searchPants();
+	}
+	
+	@When("^Search for Shirts$")
+	public void search_for_Shirts() throws Throwable {
+		EbayHomePageActionsObj.searchShirts();
+	}
 }

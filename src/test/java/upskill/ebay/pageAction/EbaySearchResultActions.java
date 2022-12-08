@@ -18,12 +18,20 @@ public class EbaySearchResultActions {
 	public void verifyShoesItems(){
 		
 		//Option 1
-		Assert.assertEquals("Shoes", EbaySearchResultLocatorsObj.txtShoes.getText());
+//		Assert.assertEquals("Shoes", EbaySearchResultLocatorsObj.txtShoes.getText());
 		
 		//Option 2
 		Assert.assertTrue(EbaySearchResultLocatorsObj.txtShoes.isDisplayed());
 		
 		//Option 3
 		EbaySearchResultLocatorsObj.txtShoes.isDisplayed();
+	}
+	
+	public void verifyPantsItems(){
+		Assert.assertTrue(EbaySearchResultLocatorsObj.txtPants.isDisplayed());
+	}
+	
+	public void verifyShirtsItems(){
+		Assert.assertTrue(EbaySearchResultLocatorsObj.txtShirts.isDisplayed());
 	}
 }
