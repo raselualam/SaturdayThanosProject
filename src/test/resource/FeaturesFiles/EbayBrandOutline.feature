@@ -16,3 +16,15 @@ Description: User should able to filter items by Brand
 		|Shoes		|Nike		|
 		|Shirts		|Adidas		|
 		|Pants		|Unbranded	|
+		
+		
+	Scenario Outline: Filter items by Country of Manufacture 
+		Given Search for "<Items>"
+		When Region of Manufacture "<Country>"
+		Then Item list should from "<Country>"
+	
+	Examples:
+		|Items		|Country		|
+		|Shoes		|China			|
+		|Shirts		|Bangladesh		|
+		|Pants		|United States	|

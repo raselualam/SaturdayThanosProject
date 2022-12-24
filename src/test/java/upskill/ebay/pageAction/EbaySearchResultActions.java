@@ -58,4 +58,10 @@ public class EbaySearchResultActions {
 			System.out.println("Brand not found");
 		}
 	}
+	
+	public void selectShirt() throws Exception{
+		Thread.sleep(2000);
+		EbaySearchResultLocatorsObj.linkShirtItems.click();
+		Thread.sleep(2000);
+	}
 }

@@ -32,4 +32,9 @@ public class EbayHomePageSteps {
 	public void search_for(String items) throws Throwable {
 		EbayHomePageActionsObj.searchItems(items);
 	}
+	
+	@Given("^Search for Big Tall Cotton Tee$")
+	public void search_for_Big_Tall_Cotton_Tee() throws Throwable {
+		EbayHomePageActionsObj.searchItems("big tall cotton tee");
+	}
 }

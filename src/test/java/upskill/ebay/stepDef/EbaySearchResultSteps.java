@@ -31,11 +31,18 @@ public class EbaySearchResultSteps {
 	
 	@When("^Filter by \"([^\"]*)\"$")
 	public void filter_by(String brand) throws Throwable {
+		Thread.sleep(2000);
 		EbaySearchResultActionsObj.filterBrand(brand);
 	}
 
 	@Then("^Item list should have products of \"([^\"]*)\"$")
 	public void item_list_should_have_products_of(String brand) throws Throwable {
+		Thread.sleep(2000);
 		EbaySearchResultActionsObj.VerifyBrandItems(brand);
+	}
+	
+	@When("^Select the first shirt on item list$")
+	public void select_the_first_shirt_on_item_list() throws Throwable {
+		EbaySearchResultActionsObj.selectShirt();
 	}
 }
