@@ -92,4 +92,6 @@ public class EbayHomePageActions {
 		
 		js.executeScript("window.scrollBy(0,document.body.scrollHeight)"); //Scroll down to bottom of website
 	}
+	
+	
 }

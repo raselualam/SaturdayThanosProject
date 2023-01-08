@@ -1,10 +1,15 @@
 package upskill.ebay.pageAction;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import upskill.ebay.pageElements.ShettyHomepageLocators;
 import upskill.utilities.SetupDrivers;
@@ -21,6 +26,19 @@ public class ShettyHomepageActions {
 	public void loadShettyHomepage() throws Exception{
 		SetupDrivers.driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 		Thread.sleep(3000);
+		
+//		Selenium Wait : 1. Implicit wait(Global), 2. Explicit wait(Conditional), 3. Fluent wait(intermittent)
+
+		SetupDrivers.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);				//Implicit Wait
+		
+		WebDriverWait wait = new WebDriverWait(SetupDrivers.driver, 20);
+		wait.until(ExpectedConditions.elementToBeClickable(ShettyHomepageLocatorsObj.btnHome));		//Explicit wait
+		
+		FluentWait fluentWait = new FluentWait(SetupDrivers.driver);								//Fluent Wait
+						fluentWait.withTimeout(20, TimeUnit.SECONDS);
+						fluentWait.pollingEvery(2, TimeUnit.SECONDS);
+						fluentWait.ignoring(NoSuchElementException.class);
+						fluentWait.withMessage("Fluent Wait Time exceeded");
 	}
 	
 	public void clickIframeHome(){
